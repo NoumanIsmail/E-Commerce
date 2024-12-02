@@ -1,16 +1,16 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AdminLayout from "./components/admin/AdminLayout";
 import AdminHome from "./pages/admin/AdminHome";
-import AdminCategory from "./pages/admin/AdminCategory";
-import AdminProduct from "./pages/admin/AdminProduct";
-import AdminOrders from "./pages/admin/AdminOrders";
+import AdminCategory from "./pages/admin/CategoryPage/AdminCategory";
+import AdminProduct from "./pages/admin/ProductPage/AdminProduct";
+import AdminOrders from "./pages/admin/OrderPage/AdminOrders";
 import Layout from "./components/client/Layout";
 import Home from "./pages/client/Home";
 import Shop from "./pages/client/Shop";
 import Cart from "./pages/client/Cart";
 import Login from "./pages/Login";
 import Checkout from "./pages/client/Checkout";
-import AdminUsers from "./pages/admin/AdminUsers";
+import AdminUsers from "./pages/admin/UserPage/AdminUsers";
 
 function App() {
   return (

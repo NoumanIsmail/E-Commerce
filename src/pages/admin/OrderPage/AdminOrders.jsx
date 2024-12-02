@@ -1,7 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { GoPencil } from 'react-icons/go'
+import DeleteModal from '../../../components/admin/DeleteModal'
+import { BiTrash } from 'react-icons/bi'
+import CreateProduct from '../ProductPage/CreateProductModal'
+import CreateProductModal from '../ProductPage/CreateProductModal'
 
 const AdminOrders = () => {
+  const [open ,setOpen] = useState(false)
+
+  const closeModal = ()=>{
+    setOpen(false)
+  }
   return (
     <>
     {/* component */}
@@ -54,6 +63,7 @@ const AdminOrders = () => {
                 <td className='px-4 py-3 text-xs border'><span className="px-2 py-1 rounded-md bg-delivered hover:bg-delivered-hover text-white">Delivered</span></td>
                 <td className="px-4 py-3 text-sm border">
                 <button className="border-2 py-1 px-2 rounded-lg font-semibold shadow-sm bg-update hover:bg-update-hover text-white font-mono"><GoPencil/></button>
+                <button onClick={()=> setOpen(true)} className="border-2 py-1 px-2 rounded-lg font-semibold shadow-sm bg-delete hover:bg-delete-hover text-white font-mono"><BiTrash/></button>
                 {/* <button className="border-2 py-1 px-2 rounded-lg font-semibold shadow-sm bg-delete hover:bg-delete-hover text-white font-mono"><RiDeleteBin7Line   /></button> */}
                 </td>
               </tr>
@@ -62,7 +72,7 @@ const AdminOrders = () => {
         </div>
       </div>
     </section>
-    
+    <DeleteModal isOpen={open} onClose={closeModal} />
         </>
   )
 }
